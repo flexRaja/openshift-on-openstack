@@ -4,18 +4,18 @@ openstack_user: admin
 openstack_passwd: openstack  ## update this to your OpenStack admin password
 openstack_ip: <ip address>  ## This should be your OpenStack controller IP
 openstack_project: admin  ## This is the project for your user
-domain_name: ocp3.lab
-dns_forwarders: [8.8.8.8, 8.8.4.4]
+domain_name: strugglestack.org
+dns_forwarders: [1.1.1.1,1.0.0.1]
 external_network: public
 service_subnet_cidr: 192.168.8.0/24  ## Change this to match your network CIDR
 router_id: <router id from 'openstack router list'>
 image: centos7
 ssh_user: centos
-ssh_key_path: /root/openshift.pem  ## The path to your openshift SSH key
-ssh_key_name: openshift
+ssh_key_path: /root/admin.pem
+ssh_key_name: admin
 stack_name: openshift-cluster
 openstack_version: 13
-contact: admin@ocp3.lab
+contact: admin@strugglestack.org
 heat_template_path: /root/content-openshift-on-openstack/heat/openshift.yaml
 
 ### OpenShift Settings ###
@@ -43,7 +43,7 @@ infra_server_group_policies: "['anti-affinity']"
 node_server_group_policies: "['anti-affinity']"
 
 ### OpenStack Instance Flavors ###
-bastion_flavor: m1.small
-master_flavor: m1.small
-infra_flavor: m1.small
-node_flavor: m1.medium
+bastion_flavor: ocp.bastion
+master_flavor: ocp.master
+infra_flavor: ocp.infra
+node_flavor: ocp.node
