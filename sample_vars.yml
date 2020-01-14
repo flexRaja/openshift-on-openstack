@@ -16,7 +16,7 @@ ssh_key_name: openshift
 stack_name: openshift-cluster
 openstack_version: 13
 contact: admin@ocp3.lab
-heat_template_path: /root/content-openshift-on-openstack/heat/openshift.yaml
+heat_template_path: /root/openshift-on-openstack/heat/openshift.yaml
 
 ### OpenShift Settings ###
 openshift_version: 3.9
